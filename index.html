@@ -4,49 +4,263 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aaron McCarthy</title>
-<meta name="description" content="Aaron McCarthy's personal site">
+<meta name="description" content="Professional Services Engineer & Technical Problem Solver">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/images/favicon/favicon.ico">
 </head>
 <body>
 <div class="container">
   <nav class="nav">
-    <a href="/"><strong>Aaron McCarthy</strong></a>
-    <div class="links">
-      <a href="/about/">About</a>
-      <a href="/resume/">Resume</a>
-      <a href="/contact/">Contact</a>
+    <div class="nav-brand">
+      <a href="/" class="logo">
+        <span class="logo-text">Aaron.dev</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon"></span>
+      </button>
     </div>
   </nav>
-  <main class="hero">
-    <div class="card" style="display:flex;gap:20px;align-items:center">
-      <img class="avatar" src="/images/me.jpg" alt="Aaron McCarthy">
-      <div>
-        <h1>Hi, I'm Aaron.</h1>
-        <h2>Dublin-based CSB graduate. ex-Stripe, ex-IBM.</h2>
-        <p>Welcome to my site. Read more <a href="/about/">about me</a>, view my <a href="/resume/">resume</a>, or <a href="/contact/">get in touch</a>.</p>
-        <div class="social">
-          <a href="mailto:aaronedmccarthy@gmail.com">aaronedmccarthy@gmail.com</a>
-          <a href="https://github.com/RinMcC">GitHub</a>
-          <a href="https://www.linkedin.com/in/aaron-mccarthy/">LinkedIn</a>
-          <a href="https://twitter.com/Aaron_Mc_Carthy">Twitter</a>
-          <a href="https://www.instagram.com/a_e_s_r_mccarthy/">Instagram</a>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="title-line">Aaron McCarthy</span>
+            <span class="title-subtitle">Professional Services Engineer</span>
+          </h1>
+          <p class="hero-description">
+            I build bridges between complex technical systems and real-world business needs.
+            Specialized in customer success, technical consulting, and turning problems into solutions.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years at Stripe</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Engineers Trained</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Problems Solved</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar-container">
+            <img class="avatar" src="/images/me.jpg" alt="Aaron McCarthy">
+            <div class="avatar-glow"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="grid cols-2">
-      <section class="card">
-        <h3>About this site</h3>
-        <p>A clean, fast, accessible static site. No JS needed.</p>
-      </section>
-      <section class="card">
-        <h3>Currently</h3>
-        <p>Refreshing engineering skills by building this site and studying CS50 and Mosh courses.</p>
-      </section>
-    </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2 class="section-title">About</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Background</h3>
+          <p>Dublin-based engineer with a passion for solving complex technical challenges.
+          Computer Science graduate who transitioned from development to customer-facing technical roles.</p>
+        </div>
+        <div class="about-card">
+          <h3>Philosophy</h3>
+          <p>Technology should work for people, not against them. I specialize in translating
+          between technical complexity and business value.</p>
+        </div>
+        <div class="about-card">
+          <h3>Currently</h3>
+          <p>Refreshing engineering skills through CS50, building projects, and exploring
+          new opportunities in technical consulting and engineering.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="experience-timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Product Specialist</h3>
+            <div class="company">Stripe</div>
+            <div class="duration">2021 - 2024</div>
+            <p>Resolved critical issues for Stripe's largest users, trained 1000+ new hires,
+            and built internal tools to improve support efficiency.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Technical Support Engineer</h3>
+            <div class="company">IBM</div>
+            <div class="duration">2020 - 2021</div>
+            <p>Provided technical support for enterprise cloud solutions and database systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/images/projects/spacepotato.jpg" alt="Space Potato project">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View</a>
+                <a href="#" class="project-link">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Space Potato</h3>
+            <p>Physics-based space game built with JavaScript. Experimenting with game mechanics and orbital dynamics.</p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Canvas</span>
+              <span class="tag">Physics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/images/projects/catdetector.jpg" alt="Cat Detector project">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View</a>
+                <a href="#" class="project-link">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cat Detector</h3>
+            <p>Machine learning image classifier for identifying cats in photos. Built to practice ML fundamentals.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">ML</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/images/projects/harvest.jpg" alt="Harvest project">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View</a>
+                <a href="#" class="project-link">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Harvest Dashboard</h3>
+            <p>Productivity analytics dashboard that visualizes time tracking data with beautiful charts and insights.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">D3.js</span>
+              <span class="tag">API</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/images/projects/nearestdollar.jpg" alt="Nearest Dollar project">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View</a>
+                <a href="#" class="project-link">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Nearest Dollar</h3>
+            <p>Round-up savings app prototype that helps users save money by rounding up purchases to the nearest dollar.</p>
+            <div class="project-tags">
+              <span class="tag">Fintech</span>
+              <span class="tag">Mobile</span>
+              <span class="tag">API</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-content">
+        <p class="contact-description">
+          Interested in technical consulting, customer success, or just want to chat about engineering?
+          I'm always open to discussing new opportunities and interesting problems.
+        </p>
+        <div class="contact-grid">
+          <a href="mailto:aaronedmccarthy@gmail.com" class="contact-card" id="emailCard">
+            <div class="contact-icon">✉</div>
+            <div class="contact-text">
+              <h3>Email</h3>
+              <p>aaronedmccarthy@gmail.com</p>
+            </div>
+            <button class="copy-button" id="copyEmail" aria-label="Copy email">Copy</button>
+          </a>
+
+          <a href="https://github.com/RinMcC" class="contact-card">
+            <div class="contact-icon">⚡</div>
+            <div class="contact-text">
+              <h3>GitHub</h3>
+              <p>See my code and projects</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/aaron-mccarthy/" class="contact-card">
+            <div class="contact-icon">💼</div>
+            <div class="contact-text">
+              <h3>LinkedIn</h3>
+              <p>Professional background</p>
+            </div>
+          </a>
+
+          <a href="https://twitter.com/Aaron_Mc_Carthy" class="contact-card">
+            <div class="contact-icon">🐦</div>
+            <div class="contact-text">
+              <h3>Twitter</h3>
+              <p>Thoughts and updates</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>© <span id="year"></span> Aaron McCarthy</footer>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© <span id="year"></span> Aaron McCarthy. Built with ⚡ and curiosity.</p>
+    </div>
+  </footer>
 </div>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script defer src="/assets/site.js"></script>
 </body>
 </html>

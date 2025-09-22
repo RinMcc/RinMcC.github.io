@@ -18,10 +18,10 @@
     </div>
   </nav>
   <main class="grid">
-    <section class="card">
+    <section class="card reveal">
       <h1>Contact</h1>
       <p>Email is best:</p>
-      <p><a href="mailto:aaronedmccarthy@gmail.com">aaronedmccarthy@gmail.com</a></p>
+      <p><a href="mailto:aaronedmccarthy@gmail.com" id="emailLink">aaronedmccarthy@gmail.com</a> <button class="theme-toggle" id="copyEmail" aria-label="Copy email">Copy</button></p>
       <div class="social">
         <a href="https://github.com/RinMcC">GitHub</a>
         <a href="https://www.linkedin.com/in/aaron-mccarthy/">LinkedIn</a>
@@ -32,6 +32,6 @@
   </main>
   <footer>© <span id="year"></span> Aaron McCarthy</footer>
 </div>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script defer src="/assets/site.js"></script>
 </body>
 </html>
