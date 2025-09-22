@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aaron McCarthy</title>
+<meta name="description" content="Aaron McCarthy's personal site">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/images/favicon/favicon.ico">
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <a href="/"><strong>Aaron McCarthy</strong></a>
+    <div class="links">
+      <a href="/about/">About</a>
+      <a href="/resume/">Resume</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+  <main class="hero">
+    <div class="card" style="display:flex;gap:20px;align-items:center">
+      <img class="avatar" src="/images/me.jpg" alt="Aaron McCarthy">
+      <div>
+        <h1>Hi, I'm Aaron.</h1>
+        <h2>Dublin-based CSB graduate. ex-Stripe, ex-IBM.</h2>
+        <p>Welcome to my site. Read more <a href="/about/">about me</a>, view my <a href="/resume/">resume</a>, or <a href="/contact/">get in touch</a>.</p>
+        <div class="social">
+          <a href="mailto:aaronedmccarthy@gmail.com">aaronedmccarthy@gmail.com</a>
+          <a href="https://github.com/RinMcC">GitHub</a>
+          <a href="https://www.linkedin.com/in/aaron-mccarthy/">LinkedIn</a>
+          <a href="https://twitter.com/Aaron_Mc_Carthy">Twitter</a>
+          <a href="https://www.instagram.com/a_e_s_r_mccarthy/">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="grid cols-2">
+      <section class="card">
+        <h3>About this site</h3>
+        <p>A clean, fast, accessible static site. No JS needed.</p>
+      </section>
+      <section class="card">
+        <h3>Currently</h3>
+        <p>Refreshing engineering skills by building this site and studying CS50 and Mosh courses.</p>
+      </section>
+    </div>
+  </main>
+  <footer>© <span id="year"></span> Aaron McCarthy</footer>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
