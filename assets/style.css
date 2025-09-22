@@ -36,6 +36,7 @@
   /* Typography */
   --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-cyberpunk: 'Orbitron', 'SF Mono', 'Monaco', monospace;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -130,11 +131,13 @@ body::before {
 }
 
 .nav-brand .logo {
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-cyberpunk);
+  font-size: 1.8rem;
+  font-weight: 900;
   color: var(--text-primary);
   text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .logo-text {
@@ -144,6 +147,24 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 8s ease infinite;
+  position: relative;
+  text-shadow: 0 0 20px rgba(0, 212, 170, 0.5);
+}
+
+.logo-text::before {
+  content: 'RIN';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, var(--holo-1), var(--holo-2), var(--holo-3), var(--holo-4));
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 8s ease infinite;
+  filter: blur(1px);
+  opacity: 0.7;
+  z-index: -1;
 }
 
 @keyframes gradient-shift {
