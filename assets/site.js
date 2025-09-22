@@ -150,16 +150,22 @@
   });
 })();
 
-// Navbar background opacity on scroll
+// Enhanced navbar background on scroll
 (function(){
   const nav = document.querySelector('.nav');
   let ticking = false;
 
   function updateNavbar() {
     const scrolled = window.pageYOffset;
-    const opacity = Math.min(0.95, 0.8 + (scrolled / 300) * 0.15);
+    const intensity = Math.min(1, scrolled / 200);
 
-    nav.style.background = `rgba(10, 10, 10, ${opacity})`;
+    const baseGradient = `linear-gradient(135deg,
+      rgba(0, 212, 170, ${0.1 + intensity * 0.05}) 0%,
+      rgba(121, 40, 202, ${0.1 + intensity * 0.05}) 50%,
+      rgba(0, 112, 243, ${0.1 + intensity * 0.05}) 100%)`;
+
+    nav.style.background = baseGradient;
+    nav.style.borderColor = `rgba(0, 212, 170, ${0.3 + intensity * 0.2})`;
     ticking = false;
   }
 
