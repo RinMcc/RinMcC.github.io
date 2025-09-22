@@ -145,7 +145,6 @@ body::before {
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .logo-text {
@@ -161,7 +160,7 @@ body::before {
 }
 
 .logo-text::before {
-  content: 'RIN';
+  content: 'rin';
   position: absolute;
   top: 0;
   left: 0;
