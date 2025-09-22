@@ -217,29 +217,62 @@ body::before {
 /* Theme toggle */
 .theme-toggle {
   appearance: none;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  background: linear-gradient(135deg,
+    rgba(0, 212, 170, 0.1) 0%,
+    rgba(121, 40, 202, 0.1) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
   padding: var(--space-sm);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle:hover {
-  border-color: var(--border-accent);
-  box-shadow: 0 0 20px var(--glow-color);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 24px var(--glow-color), 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  background: linear-gradient(135deg,
+    rgba(0, 212, 170, 0.2) 0%,
+    rgba(121, 40, 202, 0.2) 100%);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.theme-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .theme-icon::before {
   content: '🌙';
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 170, 0.6));
+  transition: all 0.3s ease;
 }
 
 [data-theme="light"] .theme-icon::before {
   content: '☀️';
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.8));
+}
+
+.theme-toggle:hover .theme-icon::before {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px var(--accent-primary));
 }
 
 /* Hero section */
