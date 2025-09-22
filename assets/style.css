@@ -141,6 +141,7 @@ body::before {
 }
 
 .logo-text {
+  font-family: var(--font-cyberpunk);
   background: linear-gradient(135deg, var(--holo-1), var(--holo-2), var(--holo-3), var(--holo-4));
   background-size: 300% 300%;
   background-clip: text;
