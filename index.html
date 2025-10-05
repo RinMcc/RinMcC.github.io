@@ -3,207 +3,313 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>aaron mccarthy</title>
-<meta name="description" content="professional services engineer & technical problem solver">
+<title>rin - terminal.exe</title>
+<meta name="description" content="integration engineer & technical problem solver">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/images/favicon/favicon.ico">
 </head>
 <body>
-<div class="container">
-  <nav class="nav">
-    <div class="nav-brand">
-      <a href="/" class="logo">
-        <span class="logo-text">rin</span>
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="#about" class="nav-link">about</a>
-      <a href="#experience" class="nav-link">experience</a>
-      <a href="#contact" class="nav-link">contact</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-icon"></span>
-      </button>
-    </div>
-  </nav>
+<!-- CRT Scan lines overlay -->
+<div class="crt-overlay"></div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            <span class="title-line">aaron mccarthy</span>
-            <span class="title-subtitle">integration engineer at Stripe</span>
-          </h1>
-          <p class="hero-description">
-            i build bridges between complex technical systems and real-world business needs.
-            currently helping businesses integrate with Stripe's payment platform seamlessly.
-          </p>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number">6+</span>
-              <span class="stat-label">years experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">1000+</span>
-              <span class="stat-label">users trained</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">problems solved</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="avatar-container">
-            <img class="avatar" src="/images/me.jpg" alt="aaron mccarthy">
-            <div class="avatar-glow"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Desktop -->
+<div class="desktop">
+  <!-- Desktop Background Art -->
+<div class="desktop-bg-art">
+  <pre class="ascii-logo logo-bright">
+.............................................................................
 
-    <section id="about" class="section">
-      <div class="section-header">
-        <h2 class="section-title">about</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>background</h3>
-          <p>dublin-based engineer with a passion for solving complex technical challenges.
-          computer science and business graduate who transitioned from development to customer-facing technical roles.</p>
-        </div>
-        <div class="about-card">
-          <h3>philosophy</h3>
-          <p>technology should work for people, not against them. i specialize in translating
-          between technical complexity and business value.</p>
-        </div>
-        <div class="about-card">
-          <h3>currently</h3>
-          <p>working as an integration engineer at Stripe, helping businesses build seamless
-          payment integrations while continuing to expand my technical skills.</p>
-        </div>
-      </div>
-    </section>
+██████╗  ██╗  ███╗   ██╗
+██╔══██╗ ██║  ████╗  ██║
+██████╔╝ ██║  ██╔██╗ ██║
+██╔══██╗ ██║  ██║╚██╗██║
+██║  ██║ ██║  ██║ ╚████║
+╚═╝  ╚═╝ ╚═╝  ╚═╝  ╚═══╝
 
-    <section id="experience" class="section">
-      <div class="section-header">
-        <h2 class="section-title">experience</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="experience-timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>integration engineer</h3>
-            <div class="company">stripe</div>
-            <div class="duration">2024 - present</div>
-            <p>helping businesses integrate with Stripe's payment platform, providing technical guidance
-            and solutions for complex payment workflows and API implementations.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>product manager</h3>
-            <div class="company">global payments</div>
-            <div class="duration">2024</div>
-            <p>led product strategy and development for payment solutions, working with cross-functional
-            teams to deliver innovative fintech products.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>technical customer success specialist</h3>
-            <div class="company">aws</div>
-            <div class="duration">2023 - 2024</div>
-            <p>provided technical guidance and support to enterprise customers, helping them optimize
-            their cloud infrastructure and achieve business objectives.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>product specialist</h3>
-            <div class="company">stripe</div>
-            <div class="duration">2019 - 2023</div>
-            <p>resolved critical issues for Stripe's largest users, trained 1000+ new hires,
-            and built internal tools to improve support efficiency.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3>consultant</h3>
-            <div class="company">ibm</div>
-            <div class="duration">2018 - 2019</div>
-            <p>provided consulting services for enterprise clients, specializing in technology
-            solutions and digital transformation initiatives.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="contact" class="section">
-      <div class="section-header">
-        <h2 class="section-title">let's connect</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="contact-content">
-        <p class="contact-description">
-          interested in technical consulting, customer success, or just want to chat about engineering?
-          i'm always open to discussing new opportunities and interesting problems.
-        </p>
-        <div class="contact-grid">
-          <a href="mailto:aaronedmccarthy@gmail.com" class="contact-card" id="emailCard">
-            <div class="contact-icon">✉</div>
-            <div class="contact-text">
-              <h3>email</h3>
-              <p>aaronedmccarthy@gmail.com</p>
-            </div>
-            <button class="copy-button" id="copyEmail" aria-label="copy email">copy</button>
-          </a>
-
-          <a href="https://github.com/RinMcC" class="contact-card">
-            <div class="contact-icon">⚡</div>
-            <div class="contact-text">
-              <h3>github</h3>
-              <p>see my code and projects</p>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/aaron-mccarthy/" class="contact-card">
-            <div class="contact-icon">💼</div>
-            <div class="contact-text">
-              <h3>linkedin</h3>
-              <p>professional background</p>
-            </div>
-          </a>
-
-
-          <a href="https://www.instagram.com/a_e_s_r_mccarthy/" class="contact-card">
-            <div class="contact-icon">📸</div>
-            <div class="contact-text">
-              <h3>instagram</h3>
-              <p>personal life</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <p>© <span id="year"></span> aaron mccarthy. built with ⚡ and curiosity.</p>
-    </div>
-  </footer>
+.............................................................................
+  </pre>
 </div>
+
+
+  <!-- Desktop Icons -->
+  <div class="desktop-icons">
+    <div class="desktop-icon" data-window="main">
+      <div class="icon-img">
+        <img src="images/Address Book Icon 32x32.png" alt="A recycling bin">
+      </div>
+      <div class="icon-label">resume.txt</div>
+    </div>
+    <div class="desktop-icon" data-window="about">
+       <div class="icon-img">
+        <img src="images/Sourcebooks 2014.png" alt="A man wearing a hat and sunglasses">
+      </div>
+      <div class="icon-label">about.txt</div>
+    </div>
+    <div class="desktop-icon" data-window="experience">
+      <div class="icon-img">
+        <img src="images/Search Directory Icon 48x48.png" alt="A magnifying glass looking into a manilla folder">
+      </div>
+      <div class="icon-label">experience</div>
+    </div>
+    <div class="desktop-icon" data-window="projects">
+      <div class="icon-img">
+        <img src="images/Recycle Bin Full Icon.png" alt="A recycling bin">
+      </div>
+      <div class="icon-label">projects</div>
+    </div>
+    <div class="desktop-icon" data-window="contact">
+      <div class="icon-img">
+        <img src="images/Modem Icon 48x48.png" alt="An old telephone">
+      </div>
+      <div class="icon-label">contact</div>
+    </div>
+  </div>
+
+  <!-- Main Window - Resume -->
+  <div class="window" id="mainWindow" data-window="main">
+    <div class="window-header">
+      <div class="window-title">
+        <span class="window-icon">
+          <img src="images/Address Book Icon 32x32.png" alt="A recycling bin">
+        </span>
+        <span>resume.txt - notepad.exe</span>
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">_</button>
+        <button class="window-btn maximize">□</button>
+        <button class="window-btn close">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <pre class="terminal-text">
+================================================================================
+  AARON MCCARTHY
+  integration engineer @ stripe
+================================================================================
+
+[ABOUT]
+dublin-based engineer building bridges between complex technical systems
+and real-world business needs. cs + business grad -> customer-facing
+technical roles.
+
+[QUICK STATS]
+  [+] 6+ years experience
+  [+] 1000+ users trained
+  [+] specialties: integrations, payments, technical support
+
+[EXPERIENCE]
+  2024-present  | integration engineer      | stripe
+  2024          | product manager          | global payments
+  2023-2024     | technical cust success   | aws
+  2019-2023     | product specialist       | stripe
+  2018-2019     | consultant               | ibm
+
+[CONTACT]
+  email     : aaronedmccarthy@gmail.com
+  github    : <a href="https://github.com/RinMcC" target="_blank">github.com/RinMcC</a>
+  linkedin  : <a href="https://www.linkedin.com/in/aaron-mccarthy/" target="_blank">linkedin.com/in/aaron-mccarthy</a>
+  instagram : <a href="https://www.instagram.com/a_e_s_r_mccarthy/" target="_blank">@a_e_s_r_mccarthy</a>
+
+--------------------------------------------------------------------------------
+system.time: <span id="systemTime"></span> | status: online | location: dublin, ie
+--------------------------------------------------------------------------------
+      </pre>
+    </div>
+  </div>
+
+  <!-- About Window -->
+  <div class="window" id="aboutWindow" data-window="about">
+    <div class="window-header">
+      <div class="window-title">
+        <span class="window-icon">
+                  <img src="images/Sourcebooks 2014.png" alt="A man wearing a hat and sunglasses">
+        </span>
+        <span>about.txt</span>
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">_</button>
+        <button class="window-btn maximize">□</button>
+        <button class="window-btn close">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <pre class="terminal-text">
+================================================================================
+  ABOUT.TXT
+================================================================================
+
+[BACKGROUND]
+dublin-based engineer with a passion for solving complex technical
+challenges. computer science and business graduate who transitioned
+from development to customer-facing technical roles.
+
+[PHILOSOPHY]
+technology should work for people, not against them. i specialize
+in translating between technical complexity and business value.
+
+[CURRENTLY]
+working as an integration engineer at stripe, helping businesses
+build seamless payment integrations while continuing to expand my
+technical skills.
+      </pre>
+    </div>
+  </div>
+
+  <!-- Experience Window -->
+  <div class="window" id="experienceWindow" data-window="experience">
+    <div class="window-header">
+      <div class="window-title">
+        <span class="window-icon">
+          <img src="images/Search Directory Icon 48x48.png" alt="A magnifying glass looking into a manilla folder">
+        </span>
+        <span>experience.txt</span>
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">_</button>
+        <button class="window-btn maximize">□</button>
+        <button class="window-btn close">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <pre class="terminal-text">
+================================================================================
+  EXPERIENCE.TXT
+================================================================================
+
+[INTEGRATION ENGINEER @ STRIPE]
+  2024 - present
+
+  helping businesses integrate with stripe's payment platform, providing
+  technical guidance and solutions for complex payment workflows and api
+  implementations.
+
+--------------------------------------------------------------------------------
+
+[PRODUCT MANAGER @ GLOBAL PAYMENTS]
+  2024
+
+  led product strategy and development for payment solutions, working with
+  cross-functional teams to deliver innovative fintech products.
+
+--------------------------------------------------------------------------------
+
+[TECHNICAL CUSTOMER SUCCESS @ AWS]
+  2023 - 2024
+
+  provided technical guidance and support to enterprise customers, helping
+  them optimize their cloud infrastructure and achieve business objectives.
+
+--------------------------------------------------------------------------------
+
+[PRODUCT SPECIALIST @ STRIPE]
+  2019 - 2023
+
+  resolved critical issues for stripe's largest users, trained 1000+ new
+  hires, and built internal tools to improve support efficiency.
+
+--------------------------------------------------------------------------------
+
+[CONSULTANT @ IBM]
+  2018 - 2019
+
+  provided consulting services for enterprise clients, specializing in
+  technology solutions and digital transformation initiatives.
+      </pre>
+    </div>
+  </div>
+
+  <!-- Contact Window -->
+  <div class="window" id="contactWindow" data-window="contact">
+    <div class="window-header">
+      <div class="window-title">
+        <span class="window-icon">
+          <img src="images/Modem Icon 48x48.png" alt="An old telephone">
+        </span>
+        <span>contact.txt</span>
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">_</button>
+        <button class="window-btn maximize">□</button>
+        <button class="window-btn close">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <pre class="terminal-text">
+================================================================================
+  CONTACT.TXT
+================================================================================
+
+[GET IN TOUCH]
+interested in technical consulting, customer success, or just want to
+chat about engineering? i'm always open to discussing new opportunities
+and interesting problems.
+
+[CONTACT INFO]
+  email     : aaronedmccarthy@gmail.com
+              <button class="copy-btn" data-copy="aaronedmccarthy@gmail.com">copy email</button>
+
+  github    : <a href="https://github.com/RinMcC" target="_blank">github.com/RinMcC</a>
+              see my code and projects
+
+  linkedin  : <a href="https://www.linkedin.com/in/aaron-mccarthy/" target="_blank">linkedin.com/in/aaron-mccarthy</a>
+              professional background
+
+  instagram : <a href="https://www.instagram.com/a_e_s_r_mccarthy/" target="_blank">@a_e_s_r_mccarthy</a>
+              personal life
+      </pre>
+    </div>
+  </div>
+
+  <!-- Projects Window -->
+  <div class="window" id="projectsWindow" data-window="projects">
+    <div class="window-header">
+      <div class="window-title">
+        <span class="window-icon">
+          <img src="images/Recycle Bin Full Icon.png" alt="A recycling bin">
+        </span>
+        <span>projects.txt</span>
+      </div>
+      <div class="window-controls">
+        <button class="window-btn minimize">_</button>
+        <button class="window-btn maximize">□</button>
+        <button class="window-btn close">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <pre class="terminal-text">
+================================================================================
+  PROJECTS.TXT
+================================================================================
+
+[PROJECTS]
+coming soon...
+
+check back later for updates on side projects and experiments.
+      </pre>
+    </div>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-btn">
+      <span class="start-icon">⊞</span>
+      <span class="start-text">start</span>
+    </button>
+    <div class="taskbar-tasks">
+      <!-- Tasks will be dynamically added here -->
+    </div>
+    <div class="taskbar-tray">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+      </button>
+      <div class="system-time" id="taskbarTime">00:00</div>
+    </div>
+  </div>
+</div>
+
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
