@@ -329,14 +329,40 @@
   });
 })();
 
-// Start button functionality (future feature)
+// Start menu functionality
 (function(){
   const startBtn = document.querySelector('.start-btn');
+  const startMenu = document.getElementById('startMenu');
 
-  if(startBtn) {
-    startBtn.addEventListener('click', () => {
-      // Placeholder for start menu functionality
-      console.log('Start menu - coming soon!');
+  if(startBtn && startMenu) {
+    // Toggle start menu
+    startBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      startMenu.classList.toggle('open');
+    });
+
+    // Close start menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if(!startMenu.contains(e.target) && !startBtn.contains(e.target)) {
+        startMenu.classList.remove('open');
+      }
+    });
+
+    // Handle start menu item clicks
+    const menuItems = startMenu.querySelectorAll('.start-menu-item[data-window]');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const windowName = item.getAttribute('data-window');
+
+        // Find the desktop icon click handler and trigger it
+        const desktopIcon = document.querySelector(`.desktop-icon[data-window="${windowName}"]`);
+        if(desktopIcon) {
+          desktopIcon.click();
+        }
+
+        // Close start menu
+        startMenu.classList.remove('open');
+      });
     });
   }
 })();

@@ -617,6 +617,107 @@ body {
   font-size: 0.95rem;
 }
 
+/* Start Menu */
+.start-menu {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 280px;
+  background: var(--window-bg);
+  border: 3px solid var(--window-border);
+  box-shadow: 0 0 15px var(--glow-color);
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+}
+
+.start-menu.open {
+  display: flex;
+  animation: start-menu-appear 0.2s ease;
+}
+
+@keyframes start-menu-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.start-menu-header {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 2px solid var(--window-border);
+}
+
+.start-menu-user {
+  font-family: var(--font-terminal);
+  font-weight: 700;
+  color: var(--window-bg);
+  font-size: 1.1rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.start-menu-content {
+  padding: var(--space-sm);
+}
+
+.start-menu-section {
+  margin-bottom: var(--space-sm);
+}
+
+.start-menu-label {
+  font-family: var(--font-terminal);
+  font-size: 0.75rem;
+  color: var(--terminal-text-dim);
+  padding: var(--space-xs) var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.start-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-terminal);
+  color: var(--terminal-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.start-menu-item:hover {
+  background: var(--accent-primary);
+  color: var(--window-bg);
+}
+
+.start-menu-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.start-menu-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.start-menu-divider {
+  height: 2px;
+  background: var(--window-border);
+  margin: var(--space-sm) 0;
+}
+
 .taskbar-tasks {
   flex: 1;
   display: flex;
