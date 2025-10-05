@@ -215,7 +215,7 @@ body {
 /* Desktop Icons */
 .desktop-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fill, 120px);
   gap: var(--space-xl);
   padding: var(--space-md);
   align-content: start;
@@ -224,7 +224,7 @@ body {
 }
 
 .desktop-icon {
-  width: 100px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,7 +275,7 @@ body {
   color: var(--terminal-text);
   text-shadow: 0 0 2px var(--glow-color);
   font-family: var(--font-terminal);
-  word-wrap: break-word;
+  white-space: nowrap;
   max-width: 100%;
 }
 
@@ -450,29 +450,23 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   flex: 1;
-  background: var(--window-bg);
   position: relative;
   /* CRT screen curvature effect using transform */
   transform-style: preserve-3d;
+  /* Prevent elastic/rubber-band scrolling */
+  overscroll-behavior: contain;
+  /* Scanlines background that covers entire scrollable area */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    ),
+    var(--window-bg);
 }
 
-/* Scan lines overlay */
-.window-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
-  z-index: 1;
-}
 
 /* Animated grain texture */
 .window-content::after {
