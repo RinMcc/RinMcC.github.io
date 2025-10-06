@@ -181,6 +181,20 @@
   windows.forEach(window => {
     const closeBtn = window.querySelector('.window-btn.close');
     const minimizeBtn = window.querySelector('.window-btn.minimize');
+    const maximizeBtn = window.querySelector('.window-btn.maximize');
+
+    // Store default dimensions (captured when window first opens)
+    let defaultWidth = null;
+    let defaultHeight = null;
+
+    // Capture default size when window opens
+    const captureDefaultSize = () => {
+      if(defaultWidth === null && window.classList.contains('open')) {
+        const computed = getComputedStyle(window);
+        defaultWidth = parseInt(computed.width, 10);
+        defaultHeight = parseInt(computed.height, 10);
+      }
+    };
 
     if(closeBtn) {
       closeBtn.addEventListener('click', (e) => {
@@ -194,6 +208,31 @@
         e.stopPropagation();
         minimizeWindow(window);
       });
+    }
+
+    if(maximizeBtn) {
+      maximizeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Capture default size if not already captured
+        captureDefaultSize();
+
+        // Get current dimensions
+        const computed = getComputedStyle(window);
+        const currentWidth = parseInt(computed.width, 10);
+        const currentHeight = parseInt(computed.height, 10);
+
+        // Only reset if not already at default size
+        if(currentWidth !== defaultWidth || currentHeight !== defaultHeight) {
+          window.style.width = defaultWidth + 'px';
+          window.style.height = defaultHeight + 'px';
+        }
+      });
+    }
+
+    // Capture default size after a short delay to ensure window is rendered
+    if(window.classList.contains('open')) {
+      setTimeout(captureDefaultSize, 100);
     }
   });
 
@@ -277,6 +316,122 @@
         el.style.transform = `translate(${xPos}px, ${yPos}px)`;
       }
     }
+  });
+
+  // Window resizing
+  windows.forEach(window => {
+    const resizeHandles = {
+      left: window.querySelector('.window-resize-handle.left'),
+      right: window.querySelector('.window-resize-handle.right'),
+      bottom: window.querySelector('.window-resize-handle.bottom'),
+      corner: window.querySelector('.window-resize-handle.corner')
+    };
+
+    let isResizing = false;
+    let resizeType = null;
+    let startX, startY, startWidth, startHeight, startLeft;
+
+    // Minimum window dimensions
+    const minWidth = 300;
+    const minHeight = 200;
+
+    function startResize(e, type) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      isResizing = true;
+      resizeType = type;
+
+      if(e.type === 'touchstart') {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      } else {
+        startX = e.clientX;
+        startY = e.clientY;
+      }
+
+      const computed = getComputedStyle(window);
+      startWidth = parseInt(computed.width, 10);
+      startHeight = parseInt(computed.height, 10);
+      startLeft = window.offsetLeft;
+
+      // Bring window to front
+      window.style.zIndex = ++highestZIndex;
+      if(activeWindow !== window) {
+        if(activeWindow) activeWindow.classList.remove('active');
+        window.classList.add('active');
+        activeWindow = window;
+        updateTaskbar();
+      }
+    }
+
+    function doResize(e) {
+      if(!isResizing) return;
+
+      e.preventDefault();
+
+      let clientX, clientY;
+      if(e.type === 'touchmove') {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      const deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+
+      if(resizeType === 'left') {
+        const newWidth = Math.max(minWidth, startWidth - deltaX);
+        if(newWidth > minWidth) {
+          window.style.width = newWidth + 'px';
+          window.style.left = (startLeft + deltaX) + 'px';
+        }
+      }
+
+      if(resizeType === 'right' || resizeType === 'corner') {
+        const newWidth = Math.max(minWidth, startWidth + deltaX);
+        window.style.width = newWidth + 'px';
+      }
+
+      if(resizeType === 'bottom' || resizeType === 'corner') {
+        const newHeight = Math.max(minHeight, startHeight + deltaY);
+        window.style.height = newHeight + 'px';
+      }
+    }
+
+    function stopResize() {
+      isResizing = false;
+      resizeType = null;
+    }
+
+    // Attach event listeners to resize handles
+    if(resizeHandles.left) {
+      resizeHandles.left.addEventListener('mousedown', (e) => startResize(e, 'left'));
+      resizeHandles.left.addEventListener('touchstart', (e) => startResize(e, 'left'));
+    }
+
+    if(resizeHandles.right) {
+      resizeHandles.right.addEventListener('mousedown', (e) => startResize(e, 'right'));
+      resizeHandles.right.addEventListener('touchstart', (e) => startResize(e, 'right'));
+    }
+
+    if(resizeHandles.bottom) {
+      resizeHandles.bottom.addEventListener('mousedown', (e) => startResize(e, 'bottom'));
+      resizeHandles.bottom.addEventListener('touchstart', (e) => startResize(e, 'bottom'));
+    }
+
+    if(resizeHandles.corner) {
+      resizeHandles.corner.addEventListener('mousedown', (e) => startResize(e, 'corner'));
+      resizeHandles.corner.addEventListener('touchstart', (e) => startResize(e, 'corner'));
+    }
+
+    // Global mouse/touch move and up events
+    document.addEventListener('mousemove', doResize);
+    document.addEventListener('touchmove', doResize);
+    document.addEventListener('mouseup', stopResize);
+    document.addEventListener('touchend', stopResize);
   });
 
   // Initialize main window as open
